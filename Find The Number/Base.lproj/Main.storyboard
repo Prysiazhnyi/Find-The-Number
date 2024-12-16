@@ -236,6 +236,13 @@
                                     <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ao1-R4-0zt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-H4-sCG">
+                                <rect key="frame" x="108" y="168" width="177" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
@@ -311,6 +318,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextDidget" destination="wOF-H4-sCG" id="0Ry-2O-PIK"/>
+                        <outlet property="statusLabel" destination="DP3-ph-nnu" id="Ghu-v4-Wle"/>
                         <outletCollection property="buttons" destination="qXQ-5B-96j" collectionClass="NSMutableArray" id="K3X-FW-eOI"/>
                         <outletCollection property="buttons" destination="opP-tj-xSc" collectionClass="NSMutableArray" id="YYo-2d-nBI"/>
                         <outletCollection property="buttons" destination="xcW-Oy-eWJ" collectionClass="NSMutableArray" id="n2f-i2-Nnq"/>
