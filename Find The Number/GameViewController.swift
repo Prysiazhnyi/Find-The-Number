@@ -45,7 +45,9 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func newgame(_ sender: UIButton) {
-        
+        game.newGame()
+        sender.isHidden = true
+        setupScreen()
     }
     
     
@@ -74,15 +76,18 @@ class GameViewController: UIViewController {
         case .start:
             statusLabel.text = "Игра началась!"
             statusLabel.textColor = .black
-            statusLabel.font = UIFont.systemFont(ofSize: 32)
+            newGameButton.isHidden = true
+            timeLabel.isHidden = false
         case .win:
             statusLabel.text = "Вы выиграли!"
             statusLabel.textColor = .green
-            statusLabel.font = UIFont.systemFont(ofSize: 32)
+            newGameButton.isHidden = false
+            timeLabel.isHidden = true
         case .lose:
             statusLabel.text = "Вы проиграли!"
             statusLabel.textColor = .red
-            statusLabel.font = UIFont.systemFont(ofSize: 32)
+            newGameButton.isHidden = false
+            timeLabel.isHidden = true
         }
     }
 }

@@ -27,6 +27,8 @@ class Game {
     
     var nextItem : Item?
     
+    var startTimeGame : Int
+    
     var status : StatusGame = .start {
         didSet {
             if status != .start {
@@ -51,6 +53,7 @@ class Game {
     
     init(countItems : Int, time : Int, updateTimer : @escaping (_ status : StatusGame, _ seconds : Int) -> Void) {
         self.countItem = countItems
+        self.startTimeGame = time
         self.timerForGame = time
         self.updateTimer = updateTimer
         setupGame()
@@ -58,7 +61,7 @@ class Game {
     
     private func setupGame() {
         var digits = data.shuffled()
-        
+        items.removeAll()
         while items.count < countItem {
             let item = Item(title:  String(digits.removeFirst()))
             items.append(item)
@@ -69,6 +72,12 @@ class Game {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (_) in
             self?.timerForGame -= 1
         })
+    }
+    
+    func newGame() {
+        status = .start
+        self.timerForGame = self.startTimeGame
+        setupGame()
     }
     
     func check(index : Int) {
