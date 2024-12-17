@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -236,8 +237,15 @@
                                     <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ao1-R4-0zt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDm-8t-vfT">
+                                <rect key="frame" x="160" y="217" width="73" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-H4-sCG">
-                                <rect key="frame" x="108" y="168" width="177" height="44"/>
+                                <rect key="frame" x="108" y="157" width="177" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -320,6 +328,7 @@
                     <connections>
                         <outlet property="nextDidget" destination="wOF-H4-sCG" id="0Ry-2O-PIK"/>
                         <outlet property="statusLabel" destination="DP3-ph-nnu" id="Ghu-v4-Wle"/>
+                        <outlet property="timeLabel" destination="wDm-8t-vfT" id="1eP-ST-A2g"/>
                         <outletCollection property="buttons" destination="qXQ-5B-96j" collectionClass="NSMutableArray" id="K3X-FW-eOI"/>
                         <outletCollection property="buttons" destination="opP-tj-xSc" collectionClass="NSMutableArray" id="YYo-2d-nBI"/>
                         <outletCollection property="buttons" destination="xcW-Oy-eWJ" collectionClass="NSMutableArray" id="n2f-i2-Nnq"/>
@@ -343,4 +352,9 @@
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
