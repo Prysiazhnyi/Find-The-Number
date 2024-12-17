@@ -18,6 +18,7 @@ class Game {
     struct Item {
         var title : String
         var isFound: Bool = false
+        var isError = false
     }
     
     private let data = Array(1...99)
@@ -65,12 +66,14 @@ class Game {
     }
     
     func check(index : Int) {
-        
+        guard status == .start else {return}
         if items[index].title == nextItem?.title {
             items[index].isFound = true
             nextItem = items.shuffled().first(where: {(item) -> Bool in
                 item.isFound == false
             })
+        } else {
+            items[index].isError = true
         }
         if nextItem == nil {
             status = .win

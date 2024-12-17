@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     lazy var game = Game(countItems: buttons.count, time : 30) { [weak self] (status, time) in
         guard let self = self else {return}
-        self.timeLabel.text = "\(time)"
+        self.timeLabel.text = time.secondsToString()
         self.updateInfoGame(with : status)
     }
     
@@ -47,6 +47,15 @@ class GameViewController: UIViewController {
         
         for index in game.items.indices {
             buttons[index].isHidden = game.items[index].isFound
+            
+            if game.items[index].isError {
+                UIView.animate(withDuration: 0.3) { [weak self] in
+                    self?.buttons[index].backgroundColor = .red
+                } completion: { [weak self] (_) in
+                    self?.buttons[index].backgroundColor = .white
+                    self?.game.items[index].isError = false
+                }
+            }
         }
         nextDidget.text = game.nextItem?.title
         
