@@ -12,8 +12,9 @@ class GameViewController: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var nextDidget: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var newGameButton: UIButton!
+    
     lazy var game = Game(countItems: buttons.count, time : 30) { [weak self] (status, time) in
         guard let self = self else {return}
         self.timeLabel.text = time.secondsToString()
@@ -42,6 +43,12 @@ class GameViewController: UIViewController {
         
         nextDidget.text = game.nextItem?.title
     }
+    
+    @IBAction func newgame(_ sender: UIButton) {
+        
+    }
+    
+    
     
     private func updateUI() {
         

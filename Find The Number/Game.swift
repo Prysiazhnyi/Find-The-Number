@@ -27,7 +27,13 @@ class Game {
     
     var nextItem : Item?
     
-    var status : StatusGame = .start
+    var status : StatusGame = .start {
+        didSet {
+            if status != .start {
+                stopGame()
+            }
+        }
+    }
     
     private var timerForGame : Int {
         didSet {
@@ -78,6 +84,10 @@ class Game {
         if nextItem == nil {
             status = .win
         }
+    }
+    
+    private func stopGame() {
+        timer?.invalidate()
     }
     
 }

@@ -22,7 +22,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="08W-YT-OYO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -251,6 +251,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kql-qe-WiB">
+                                <rect key="frame" x="132" y="673" width="146" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Новая игра "/>
+                                <connections>
+                                    <action selector="newgame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGn-Wf-48N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
@@ -326,6 +335,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="newGameButton" destination="Kql-qe-WiB" id="1db-nC-PEs"/>
                         <outlet property="nextDidget" destination="wOF-H4-sCG" id="0Ry-2O-PIK"/>
                         <outlet property="statusLabel" destination="DP3-ph-nnu" id="Ghu-v4-Wle"/>
                         <outlet property="timeLabel" destination="wDm-8t-vfT" id="1eP-ST-A2g"/>
