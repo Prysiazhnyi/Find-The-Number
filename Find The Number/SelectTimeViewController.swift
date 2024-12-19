@@ -14,17 +14,18 @@ class SelectTimeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView?.dataSource = self
+            tableView?.delegate = self
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
     }
 
 }
 
-extension SelectTimeViewController: UITableViewDataSource {
+extension SelectTimeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -34,5 +35,13 @@ extension SelectTimeViewController: UITableViewDataSource {
         cell.textLabel?.text = String(data[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        Settings.shared.currentSettings.timeForGame = data[indexPath.row]
+        navigationController?.popViewController(animated: true)
+        
     }
 }

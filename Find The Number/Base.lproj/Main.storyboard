@@ -438,6 +438,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XzL-Ae-5yG">
                                                     <rect key="frame" x="345" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="changeTimerState:" destination="qG9-w4-Icm" eventType="valueChanged" id="Da4-mJ-cDX"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -490,6 +493,9 @@
                                                     <rect key="frame" x="91.5" y="4.5" width="231" height="35"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Настройки по умолчанию"/>
+                                                    <connections>
+                                                        <action selector="resetSettings:" destination="qG9-w4-Icm" eventType="touchUpInside" id="2TD-PE-rzU"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -507,6 +513,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Настройки" id="tNR-nC-JFV"/>
+                    <connections>
+                        <outlet property="switchTimer" destination="XzL-Ae-5yG" id="RgY-l8-4MV"/>
+                        <outlet property="timeGameLabel" destination="JY5-ga-ZcO" id="PPg-KB-sah"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1y-1W-H54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
