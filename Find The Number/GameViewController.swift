@@ -15,7 +15,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var newGameButton: UIButton!
     
-    lazy var game = Game(countItems: buttons.count, time : 30) { [weak self] (status, time) in
+    lazy var game = Game(countItems: buttons.count) { [weak self] (status, time) in
         guard let self = self else {return}
         self.timeLabel.text = time.secondsToString()
         self.updateInfoGame(with : status)
@@ -25,6 +25,11 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         setupScreen()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        game.stopGame()
     }
     
     @IBAction func pressButton(_ sender: UIButton) {
@@ -43,6 +48,7 @@ class GameViewController: UIViewController {
         }
         
         nextDidget.text = game.nextItem?.title
+        timeLabel.isHidden = !Settings.shared.currentSettings.timerState
     }
     
     @IBAction func newgame(_ sender: UIButton) {
@@ -79,7 +85,7 @@ class GameViewController: UIViewController {
             statusLabel.text = "Игра началась!"
             statusLabel.textColor = .black
             newGameButton.isHidden = true
-            timeLabel.isHidden = false
+            //timeLabel.isHidden = false
         case .win:
             statusLabel.text = "Вы выиграли!"
             statusLabel.textColor = .green
