@@ -21,7 +21,7 @@ class Settings {
     
     static var shared = Settings()
     
-    private let defaultSettings = SettingsGame(timerState: false, timeForGame: 30)
+    private let defaultSettings = SettingsGame(timerState: true, timeForGame: 30)
     var currentSettings : SettingsGame {
         get {
             if let data = UserDefaults.standard.object(forKey: KeysUserDefaults.settingsGame) as? Data {
