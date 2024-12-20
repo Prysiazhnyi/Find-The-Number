@@ -91,11 +91,61 @@ class GameViewController: UIViewController {
             statusLabel.textColor = .green
             newGameButton.isHidden = false
             timeLabel.isHidden = true
+            if game.isNewRecord {
+                showAlert()
+            } else {
+                showAlertActionSheet()
+            }
         case .lose:
             statusLabel.text = "Вы проиграли!"
             statusLabel.textColor = .red
             newGameButton.isHidden = false
             timeLabel.isHidden = true
+            showAlertActionSheet()
         }
     }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "Поздравляем!", message: "Вы установили новый рекорд!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func showAlertActionSheet() {
+        let alert = UIAlertController(title: "Что вы хотите сделать далее?", message: nil, preferredStyle: .actionSheet)
+        
+        let newGameAction = UIAlertAction(title: "Начать новую игру", style: .default) { [weak self] (_) in
+            self?.game.newGame()
+           // sender.isHidden = true
+            self?.setupScreen()
+        }
+        
+        let showRecord = UIAlertAction(title: "Посмотреть рекорд", style: .default) { (_) in
+          
+            // TODO: - Record view controller
+            
+        }
+        
+        let menuAction = UIAlertAction(title: "Перейти в меню", style: .destructive) { [weak self] (_) in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        let cancellAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        
+        alert.addAction(newGameAction)
+        alert.addAction(showRecord)
+        alert.addAction(menuAction)
+        alert.addAction(cancellAction)
+        
+        if let popover = alert.popoverPresentationController {
+            popover.sourceView = self.view
+            popover.sourceRect = CGRect(x: self.view.bounds.midX, y:  self.view.bounds.midY, width: 0, height: 0)
+            popover.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
+        }
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
 }
