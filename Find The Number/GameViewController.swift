@@ -121,9 +121,8 @@ class GameViewController: UIViewController {
             self?.setupScreen()
         }
         
-        let showRecord = UIAlertAction(title: "Посмотреть рекорд", style: .default) { (_) in
-          
-            // TODO: - RECORD - добавить обработку рекорда
+        let showRecord = UIAlertAction(title: "Посмотреть рекорд", style: .default) { [weak self] (_) in
+            self?.performSegue(withIdentifier: "recordVC", sender: nil)
             
         }
         

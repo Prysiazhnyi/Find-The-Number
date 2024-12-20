@@ -44,7 +44,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Рекорд"/>
                                         <connections>
-                                            <segue destination="ru0-Tw-lLR" kind="presentation" id="afl-Ij-ajx"/>
+                                            <segue destination="ru0-Tw-lLR" kind="show" identifier="" id="afl-Ij-ajx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -356,6 +356,7 @@
                         <outletCollection property="buttons" destination="UkB-nS-RB2" collectionClass="NSMutableArray" id="hco-8t-Ayp"/>
                         <outletCollection property="buttons" destination="E84-1c-4km" collectionClass="NSMutableArray" id="zIb-LS-ZP7"/>
                         <outletCollection property="buttons" destination="Ya7-rj-U5U" collectionClass="NSMutableArray" id="s4X-eL-Bp8"/>
+                        <segue destination="ru0-Tw-lLR" kind="presentation" identifier="recordVC" id="IEO-Sh-fTr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -527,11 +528,11 @@
             <objects>
                 <viewController id="ru0-Tw-lLR" customClass="RecordViewController" customModule="Find_The_Number" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J1h-R8-VlM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-dT-AwA">
-                                <rect key="frame" x="186" y="432.5" width="42" height="21"/>
+                                <rect key="frame" x="186" y="466.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -572,6 +573,9 @@
             <point key="canvasLocation" x="247.82608695652175" y="-3.3482142857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="afl-Ij-ajx"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
