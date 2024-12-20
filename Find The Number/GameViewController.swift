@@ -123,7 +123,7 @@ class GameViewController: UIViewController {
         
         let showRecord = UIAlertAction(title: "Посмотреть рекорд", style: .default) { (_) in
           
-            // TODO: - Record view controller
+            // TODO: - RECORD - добавить обработку рекорда
             
         }
         
@@ -143,9 +143,7 @@ class GameViewController: UIViewController {
             popover.sourceRect = CGRect(x: self.view.bounds.midX, y:  self.view.bounds.midY, width: 0, height: 0)
             popover.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
         }
-        
         present(alert, animated: true, completion: nil)
-        
     }
     
 }
