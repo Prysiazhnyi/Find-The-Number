@@ -8,7 +8,7 @@
 import UIKit
 
 class SelectTimeViewController: UIViewController {
-
+    
     var data : [Int] = []
     
     @IBOutlet weak var tableView: UITableView! {
@@ -20,9 +20,9 @@ class SelectTimeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
     }
-
+    
 }
 
 extension SelectTimeViewController: UITableViewDataSource, UITableViewDelegate {
@@ -31,7 +31,7 @@ extension SelectTimeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath)
         cell.textLabel?.text = String(data[indexPath.row])
         
         return cell

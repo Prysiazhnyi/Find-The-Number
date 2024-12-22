@@ -33,7 +33,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func pressButton(_ sender: UIButton) {
-    
+        
         guard let buttinIndex = buttons.firstIndex(of: sender) else {return}
         game.check(index : buttinIndex)
         updateUI()
@@ -117,7 +117,7 @@ class GameViewController: UIViewController {
         
         let newGameAction = UIAlertAction(title: "Начать новую игру", style: .default) { [weak self] (_) in
             self?.game.newGame()
-           // sender.isHidden = true
+            // sender.isHidden = true
             self?.setupScreen()
         }
         
